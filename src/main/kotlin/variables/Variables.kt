@@ -15,6 +15,7 @@ const val currencyName = "RMB"
 //
 // var（可变引用）- 使用var关键字声明的变量可以稍后在程序中更改。它对应于常规的Java变量。
 fun main(args: Array<String>) {
+    println(currencyName)
     //声明变量
     var name = "xiaoqian"
     var age = 12
