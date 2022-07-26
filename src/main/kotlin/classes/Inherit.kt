@@ -11,7 +11,11 @@ import JavaPeople
 @Time    : 2022/7/26 6:29 PM
  */
 
-class Inherit {
+open class Inherit {
+}
+
+class II: Inherit() {
+
 }
 
 open class APeople(age:Int)
