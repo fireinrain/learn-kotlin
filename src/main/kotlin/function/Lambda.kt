@@ -29,9 +29,11 @@ fun main(args: Array<String>) {
 
     highOrder({ a, b -> a + b }, 1, 2)
 
-    data class People(val name: String, val age:Int)
-    val peoples = listOf<People>(People("xiaoqian",13),People("baibai",16),
-                                People("tit",87))
+    data class People(val name: String, val age: Int)
+
+    val peoples = listOf<People>(
+        People("xiaoqian", 13), People("baibai", 16), People("tit", 87)
+    )
 
     println(peoples.maxBy { it -> it.age })
     println(peoples.maxBy { it -> it.name.length })
@@ -56,13 +58,55 @@ fun main(args: Array<String>) {
         People("Joe", 18)
     )
 
-    val selectedPerson = people
-        .filter(predicate = { it.name.startsWith("S")})
-        .maxBy{ it.age }
+    val selectedPerson = people.filter(predicate = { it.name.startsWith("S") }).maxBy { it.age }
 
 
     println(selectedPerson)
-    println("name: ${selectedPerson?.name}" )
-    println("age: ${selectedPerson?.age}" )
+    println("name: ${selectedPerson?.name}")
+    println("age: ${selectedPerson?.age}")
 
+    var num = 3
+    println(num `**` 3)
+
+
+    //
+
+    class Structure() {
+
+        infix fun createPyramid(rows: Int) {
+            var k = 0
+            for (i in 1..rows) {
+                k = 0
+                for (space in 1..rows - i) {
+                    print("  ")
+                }
+                while (k != 2 * i - 1) {
+                    print("* ")
+                    ++k
+                }
+                println()
+            }
+        }
+    }
+
+    fun main(args: Array<String>) {
+        val p = Structure()
+        p createPyramid 4      // p.createPyramid(4)
+    }
+
+    main(arrayOf(""))
+
+
+}
+
+// 中缀表达式
+infix fun Int.`**`(powder: Int): Int {
+    if (powder == 0) {
+        return 1
+    }
+    var result = 1
+    for (i in 1..powder) {
+        result *= this
+    }
+    return result
 }
