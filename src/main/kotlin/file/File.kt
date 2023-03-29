@@ -16,7 +16,18 @@ fun main(args: Array<String>) {
     val readText = file.readText()
     println("file content: $readText")
 
+
     val readBytes = file.readBytes()
     println(readBytes)
     readBytes.forEach { println(it.toInt().toChar()) }
+
+    val c: Char = 'c'
+    println("===============$c")
+    file.readText().forEach {
+        println(it)
+    }
+
+    file.forEachLine {
+        println(it)
+    }
 }
