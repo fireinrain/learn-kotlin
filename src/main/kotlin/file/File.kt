@@ -22,6 +22,7 @@ fun main(args: Array<String>) {
     readBytes.forEach { println(it.toInt().toChar()) }
 
     val c: Char = 'c'
+    var i: Int = 'c'.code
     println("===============$c")
     file.readText().forEach {
         println(it)
