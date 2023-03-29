@@ -58,3 +58,15 @@ class MyFile {
         this.createTime = createTime
     }
 }
+
+open class GPT {
+    open fun Say(message: String): String {
+        return ""
+    }
+}
+
+class ChatGpt : GPT() {
+    override fun Say(message: String): String {
+        return super.Say(message) + message
+    }
+}
