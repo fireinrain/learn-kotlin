@@ -1,5 +1,6 @@
 package file
 
+import interfaces.MyInterface
 import java.io.File
 
 /**
@@ -30,5 +31,30 @@ fun main(args: Array<String>) {
 
     file.forEachLine {
         println(it)
+    }
+
+    val myFile: MyFile = MyFile("xiaoqian", 120)
+    println("my file: ${myFile.fileName}, createTime: ${myFile.createTime}")
+    myFile.createTime = 300
+    println("my file now createTime: ${myFile.createTime}")
+
+}
+
+
+class MyFile {
+    lateinit var fileName: String;
+    var createTime: Int = 0
+        get() {
+            return field
+        }
+        set(value) {
+            if (value > 100) {
+                field = value - 100
+            }
+        }
+
+    constructor(fileName: String, createTime: Int) {
+        this.fileName = fileName
+        this.createTime = createTime
     }
 }
